@@ -2,6 +2,7 @@ import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { KnexModule } from 'nest-knexjs';
 import { MainModule } from './main/main.module';
+import { EstimationModule } from './estimation/estimation.module';
 
 @Module({
   imports: [
@@ -15,6 +16,7 @@ import { MainModule } from './main/main.module';
       },
     }),
     MainModule,
+    EstimationModule,
   ],
 })
 export class AppModule { }
