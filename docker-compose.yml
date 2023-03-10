@@ -1,0 +1,37 @@
+version: '3.7'
+
+services:
+  server:
+    build:
+      context: ./
+      target: development
+      dockerfile: Dockerfile
+    container_name: server
+    command: npm run start:dev
+    env_file:
+      - .env
+    environment:
+      DATABASE_URL: postgresql://postgres:secret@postgres:5432/appdb
+    ports:
+      - '3000:3000'
+    volumes:
+      - ./:/app
+      - /app/node_modules
+    depends_on:
+      - postgres
+
+  postgres:
+    image: 'postgres:15'
+    container_name: postgres
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: secret
+      DB_NAME: appdb
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      - ./initdb.sh:/docker-entrypoint-initdb.d/initdb.sh
+    ports:
+      - '5432:5432'
+
+volumes:
+  pgdata:
