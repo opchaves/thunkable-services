@@ -1,8 +1,7 @@
 import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { KnexModule } from 'nest-knexjs';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
+import { MainModule } from './main/main.module';
 
 @Module({
   imports: [
@@ -15,8 +14,7 @@ import { AppService } from './app.service';
         pool: { min: 0, max: 7, idleTimeoutMillis: 300_000 },
       },
     }),
+    MainModule,
   ],
-  controllers: [AppController],
-  providers: [AppService],
 })
 export class AppModule { }
