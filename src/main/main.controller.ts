@@ -7,6 +7,7 @@ export class MainController {
 
   @Get('/estimation')
   async main(): Promise<number> {
-    return this.mainService.estimate();
+    // NOTE: `user_id` would come from the authorization header (a token)
+    return this.mainService.estimate({ user_id: 1 });
   }
 }
