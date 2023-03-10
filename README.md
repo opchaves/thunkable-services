@@ -45,6 +45,7 @@ A user sends a request to this endpoint and get a response back. That response c
 
 ```sh
 git clone https://github.com/opchaves/thunkable-services.git
+cd thunkable-services
 ```
 
 2. Create the .env file
