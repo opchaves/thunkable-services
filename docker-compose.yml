@@ -7,7 +7,7 @@ services:
       target: development
       dockerfile: Dockerfile
     container_name: server
-    command: npm run start:dev
+    command: npm run start
     env_file:
       - .env
     environment:
