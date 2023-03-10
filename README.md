@@ -17,7 +17,10 @@ A user sends a request to this endpoint and get a response back. That response c
 ## Teck stack
 
 - Nodejs
-  - Nestjs, Pg driver, Knex, Bull
+  - Nestjs (Framework for building server-side applications)
+  - Pg driver (collection of node.js modules for interfacing with your PostgreSQL database)
+  - Knex (SQL query builder for PostgreSQL)
+  - Bull (Premium Queue package for handling distributed jobs and messages in NodeJS)
 - Docker, docker-compose
 - Postgres
 - Redis
